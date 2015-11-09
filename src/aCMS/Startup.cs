@@ -29,8 +29,14 @@ namespace aCMS
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            if (env.IsDevelopment())
+            {
+                app.UseBrowserLink();
+                app.UseDeveloperExceptionPage();
+            }
+
             // Add the platform handler to the request pipeline.
             app.UseIISPlatformHandler();
 
