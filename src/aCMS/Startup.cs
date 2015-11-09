@@ -8,6 +8,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
+using Microsoft.Framework.Logging;
 
 namespace aCMS
 {
@@ -29,12 +30,14 @@ namespace aCMS
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
+
+                loggerFactory.AddConsole(LogLevel.Debug);
             }
 
             // Add the platform handler to the request pipeline.
