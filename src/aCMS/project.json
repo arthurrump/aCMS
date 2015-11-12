@@ -30,6 +30,7 @@
   ],
   "publishExclude": [
     "**.user",
-    "**.vspscc"
+    "**.vspscc",
+    "Data/"
   ]
 }
