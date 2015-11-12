@@ -3,6 +3,7 @@
   "version": "1.0.0-*",
 
   "dependencies": {
+    "EntityFramework.Commands": "7.0.0-beta8",
     "EntityFramework.Core": "7.0.0-beta8",
     "EntityFramework.Sqlite": "7.0.0-beta8",
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
@@ -14,7 +15,8 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Server.Kestrel",
+    "ef": "EntityFramework.Commands"
   },
 
   "frameworks": {
