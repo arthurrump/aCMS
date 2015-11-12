@@ -12,5 +12,7 @@ namespace aCMS.Models
             AuthorDisplay = false;
             DateTimeDisplay = false;
         }
+
+        List<Post> Posts { get; set; }
     }
 }
