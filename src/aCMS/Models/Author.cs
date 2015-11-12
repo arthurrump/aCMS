@@ -66,5 +66,10 @@ namespace aCMS.Models
         /// Toggle wether author's <see cref="Email"/> is public available. Default to false.
         /// </summary>
         public bool EmailPublicDisplay { get; set; } = false;
+
+        /// <summary>
+        /// A list of pages the author has written. <seealso cref="Page"/>
+        /// </summary>
+        public List<Page> Pages { get; set; }
     }
 }

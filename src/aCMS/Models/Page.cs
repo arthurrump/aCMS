@@ -51,10 +51,15 @@ namespace aCMS.Models
         public bool DateTimeDisplay { get; set; } = false;
 
         /// <summary>
+        /// The id of the author of the page.
+        /// </summary>
+        [Required]
+        public int AuthorId { get; set; }
+        /// <summary>
         /// The author of the page.
         /// </summary>
         [Required]
-        public string Author { get; set; }
+        public Author Author { get; set; }
         /// <summary>
         /// Boolean value to indicate wether or not the <see cref="Author"/> property should be displayed in the view.
         /// </summary>
