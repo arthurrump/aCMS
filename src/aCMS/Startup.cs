@@ -11,6 +11,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.Logging;
 using Microsoft.Data.Entity;
 using aCMS.Models;
+using aCMS.Services;
 
 namespace aCMS
 {
@@ -36,6 +37,11 @@ namespace aCMS
             services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"));
+
+            // Add services to connect to the database for each type of data in the database
+            services.AddTransient<IDataService<Blog>, DatabaseDataService<Blog>>();
+            services.AddTransient<IDataService<Post>, DatabaseDataService<Post>>();
+            services.AddTransient<IDataService<Page>, DatabaseDataService<Page>>();
 
             services.AddMvc();
 
