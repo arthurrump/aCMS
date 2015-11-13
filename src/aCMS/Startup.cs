@@ -38,6 +38,8 @@ namespace aCMS
                 .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"));
 
             services.AddMvc();
+
+            services.AddInstance(typeof(IConfiguration), Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
