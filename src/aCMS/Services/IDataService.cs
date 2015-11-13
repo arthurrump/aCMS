@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace aCMS.Services
 {
-    interface IDataService<T>
+    public interface IDataService<T>
     {
         string CacheKey { get; }
 
