@@ -20,7 +20,7 @@ namespace aCMS.Services
             _context = context;
         }
 
-        public string CacheKey { get; } = nameof(DatabaseDataService<T>);
+        public string CacheKey { get; } = $"{nameof(DatabaseDataService<T>)}<{typeof(T)}>";
 
         public T Add(T data)
         {
