@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -1669,6 +1678,15 @@
       }
     },
     "DNXCore,Version=v5.0": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -4109,6 +4127,15 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -5781,6 +5808,15 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -7453,6 +7489,15 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -10196,6 +10241,15 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
+      "CommonMark.NET/0.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/CommonMark.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -12940,6 +12994,36 @@
     }
   },
   "libraries": {
+    "CommonMark.NET/0.10.0": {
+      "type": "package",
+      "sha512": "HA5gGuJli0D/KA9u6ihlCyvw7l4PUQ/77Ips/l7W8xHWYEM8vAWsa+1kh2nS51Cc756GLs3Gw51J2q1MFA9C2w==",
+      "files": [
+        "CommonMark.NET.0.10.0.nupkg",
+        "CommonMark.NET.0.10.0.nupkg.sha512",
+        "CommonMark.NET.nuspec",
+        "lib/dnxcore50/CommonMark.dll",
+        "lib/dnxcore50/CommonMark.pdb",
+        "lib/dnxcore50/CommonMark.xml",
+        "lib/net20/CommonMark.dll",
+        "lib/net20/CommonMark.pdb",
+        "lib/net20/CommonMark.xml",
+        "lib/net35-client/CommonMark.dll",
+        "lib/net35-client/CommonMark.pdb",
+        "lib/net35-client/CommonMark.xml",
+        "lib/net40-client/CommonMark.dll",
+        "lib/net40-client/CommonMark.pdb",
+        "lib/net40-client/CommonMark.xml",
+        "lib/net45/CommonMark.dll",
+        "lib/net45/CommonMark.pdb",
+        "lib/net45/CommonMark.xml",
+        "lib/portable-net40+sl50+wp80+win+wpa81+MonoAndroid10+MonoTouch10/CommonMark.dll",
+        "lib/portable-net40+sl50+wp80+win+wpa81+MonoAndroid10+MonoTouch10/CommonMark.pdb",
+        "lib/portable-net40+sl50+wp80+win+wpa81+MonoAndroid10+MonoTouch10/CommonMark.xml",
+        "LICENSE.md",
+        "tools/cmark.exe",
+        "tools/cmark.exe.config"
+      ]
+    },
     "EntityFramework.Commands/7.0.0-beta8": {
       "type": "package",
       "serviceable": true,
@@ -17214,6 +17298,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "CommonMark.NET >= 0.10.0",
       "EntityFramework.Commands >= 7.0.0-beta8",
       "EntityFramework.Core >= 7.0.0-beta8",
       "EntityFramework.Sqlite >= 7.0.0-beta8",
