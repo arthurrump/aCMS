@@ -56,6 +56,7 @@ namespace aCMS
             services.AddTransient<IDataService<Blog>, DatabaseDataService<Blog>>();
             services.AddTransient<IDataService<Post>, DatabaseDataService<Post>>();
             services.AddTransient<IDataService<Page>, DatabaseDataService<Page>>();
+            services.AddTransient<IDataService<Author>, DatabaseAuthorService>();
 
             services.AddMvc();
 
