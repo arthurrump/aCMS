@@ -32,6 +32,12 @@ namespace aCMS.Models
         [Required]
         public int Id { get; set; }
         /// <summary>
+        /// The url for the author page.
+        /// </summary>
+        [Url]
+        [Required]
+        public string Url { get; set; }
+        /// <summary>
         /// The name of the author.
         /// </summary>
         [Required]

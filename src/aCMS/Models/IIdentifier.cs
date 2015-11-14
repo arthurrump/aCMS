@@ -8,5 +8,6 @@ namespace aCMS.Models
     public interface IIdentifier
     {
         int Id { get; set; }
+        string Url { get; set; }
     }
 }
