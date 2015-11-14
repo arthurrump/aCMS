@@ -59,6 +59,11 @@ namespace aCMS.Services
             return GetAll(html, cache);
         }
 
+        public T Get(string url, bool html = true, bool cache = true)
+        {
+            return GetAll(html, cache).Where(x => x.Url == url).Single();
+        }
+
         public T Get(int id, bool html = true, bool cache = true)
         {
             return GetAll(html, cache).Where(x => x.Id == id).Single();
