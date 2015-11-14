@@ -34,7 +34,6 @@ namespace aCMS.Models
         /// <summary>
         /// The url for the author page.
         /// </summary>
-        [Url]
         [Required]
         public string Url { get; set; }
         /// <summary>
