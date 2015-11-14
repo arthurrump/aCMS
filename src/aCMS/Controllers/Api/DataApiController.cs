@@ -27,7 +27,7 @@ namespace aCMS.Controllers.Api
     /// Generic api controller for data.
     /// </summary>
     [Route("api/[controller]")]
-    public abstract class DataApiController<T> : Controller where T : ContentBase
+    public abstract class DataApiController<T> : Controller where T : IIdentifier
     {
         protected IDataService<T> _dataService { get; set; } // Get from di in implementation
 
