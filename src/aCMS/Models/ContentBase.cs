@@ -48,11 +48,11 @@ namespace aCMS.Models
         public string Content { get; set; }
 
         /// <summary>
-        /// The moment in time, relative to UTC, that the content was first created. This field is automatically assigned when creating an instance of a implementation of ContentBase and should not be changed.
+        /// The moment in time, relative to UTC, that the content was first created.
         /// </summary>
         [Required]
         [Editable(false, AllowInitialValue = true)]
-        public DateTimeOffset DateTimeCreated { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset DateTimeCreated { get; set; }
         /// <summary>
         /// The moment in time, relative to UTC, that the content was last updated. This field should be changed at every edit.
         /// </summary>
@@ -72,7 +72,6 @@ namespace aCMS.Models
         /// <summary>
         /// The author of the page.
         /// </summary>
-        [Required]
         public Author Author { get; set; }
         /// <summary>
         /// Boolean value to indicate wether or not the <see cref="Author"/> property should be displayed in the view.

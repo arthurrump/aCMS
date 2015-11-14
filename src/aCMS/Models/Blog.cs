@@ -27,6 +27,6 @@ namespace aCMS.Models
             DateTimeDisplay = false;
         }
 
-        List<Post> Posts { get; set; }
+        public List<Post> Posts { get; set; }
     }
 }
