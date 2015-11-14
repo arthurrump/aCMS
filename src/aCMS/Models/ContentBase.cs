@@ -23,7 +23,7 @@ namespace aCMS.Models
     /// <summary>
     /// Base class for content.
     /// </summary>
-    public abstract class ContentBase
+    public abstract class ContentBase : IIdentifier
     {
         /// <summary>
         /// Unique identifier.

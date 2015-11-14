@@ -23,7 +23,7 @@ namespace aCMS.Models
     /// <summary>
     /// Model for authors in the application. Might also be used for authentication in the future.
     /// </summary>
-    public class Author
+    public class Author : IIdentifier
     {
         /// <summary>
         /// Unique identifier for an author.
