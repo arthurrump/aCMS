@@ -15,7 +15,7 @@
 using aCMS.Models;
 using Microsoft.AspNet.Mvc.ModelBinding;
 using Microsoft.Data.Entity.Metadata;
-using Microsoft.Framework.Caching.Memory;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;

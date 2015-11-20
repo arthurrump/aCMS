@@ -18,7 +18,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using aCMS.Services;
-using Microsoft.Framework.Caching.Memory;
+using Microsoft.Extensions.Caching.Memory;
 using aCMS.Models;
 
 namespace aCMS.Controllers.Api
