@@ -81,6 +81,11 @@ namespace aCMS
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Index}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "home",
+                    template: "{action=Index}/",
+                    defaults: new { controller = "Index" });
             });
         }
     }
