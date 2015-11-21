@@ -35,7 +35,7 @@ namespace aCMS.Controllers
 
         public IActionResult Index()
         {
-            ContentBase data;
+            ContentBase data = null;
 
             try
             {
@@ -43,7 +43,11 @@ namespace aCMS.Controllers
             }
             catch (Exception e) when (e is InvalidOperationException)
             {
-                data = _blogService.Get("/");
+                try
+                {
+                    data = _blogService.Get("/");
+                }
+                catch { }
             }
 
             if (data is Page)
