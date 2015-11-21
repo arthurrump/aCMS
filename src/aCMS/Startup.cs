@@ -54,10 +54,10 @@ namespace aCMS
                 .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"));
 
             // Add services to connect to the database for each type of data in the database
-            services.AddTransient<IDataService<Blog>, DatabaseDataService<Blog>>();
-            services.AddTransient<IDataService<Post>, DatabaseDataService<Post>>();
-            services.AddTransient<IDataService<Page>, DatabaseDataService<Page>>();
-            services.AddTransient<IDataService<Author>, DatabaseAuthorService>();
+            services.AddScoped<IDataService<Blog>, DatabaseDataService<Blog>>();
+            services.AddScoped<IDataService<Post>, DatabaseDataService<Post>>();
+            services.AddScoped<IDataService<Page>, DatabaseDataService<Page>>();
+            services.AddScoped<IDataService<Author>, DatabaseAuthorService>();
 
             services.AddMvc();
 
