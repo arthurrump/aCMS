@@ -13,7 +13,7 @@ namespace aCMS.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8-15964");
+                .HasAnnotation("ProductVersion", "7.0.0-beta8-15964");
 
             modelBuilder.Entity("aCMS.Models.Author", b =>
                 {
@@ -138,25 +138,25 @@ namespace aCMS.Migrations
                 {
                     b.HasOne("aCMS.Models.Author")
                         .WithMany()
-                        .ForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("aCMS.Models.Page", b =>
                 {
                     b.HasOne("aCMS.Models.Author")
                         .WithMany()
-                        .ForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId");
                 });
 
             modelBuilder.Entity("aCMS.Models.Post", b =>
                 {
                     b.HasOne("aCMS.Models.Author")
                         .WithMany()
-                        .ForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("aCMS.Models.Blog")
                         .WithMany()
-                        .ForeignKey("BlogId");
+                        .HasForeignKey("BlogId");
                 });
         }
     }
