@@ -1,0 +1,3 @@
+[submodule "src/aCMS/Themes/CleanBlog"]
+	path = src/aCMS/Themes/CleanBlog
+	url = https://github.com/arthurrump/clean-blog-aCMS-theme.git
