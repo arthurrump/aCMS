@@ -51,10 +51,10 @@ namespace aCMS.Controllers
             }
 
             if (data is Page)
-                return View($"Themes/CleanBlog/Views/Index/IndexPage", data);
+                return View("IndexPage", data);
 
             if (data is Blog)
-                return View($"Themes/CleanBlog/Views/Index/IndexBlog", data);
+                return View("IndexBlog", data);
 
             return View();
         }
