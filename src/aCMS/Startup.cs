@@ -27,6 +27,7 @@ using Microsoft.Data.Entity;
 using aCMS.Models;
 using aCMS.Services;
 using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.AspNet.FileProviders;
 
 namespace aCMS
 {
@@ -59,7 +60,11 @@ namespace aCMS
             services.AddScoped<IDataService<Page>, DatabaseDataService<Page>>();
             services.AddScoped<IDataService<Author>, DatabaseAuthorService>();
 
-            services.AddMvc();
+            services.AddMvc()
+                .AddRazorOptions(options =>
+                    {
+                        options.FileProvider = new PhysicalFileProvider($"{_appEnv.ApplicationBasePath}/Themes/CleanBlog");
+                    });
 
             services.AddInstance(typeof(IConfiguration), Configuration);
         }
