@@ -8,9 +8,10 @@ using aCMS.Models;
 namespace aCMS.Migrations
 {
     [DbContext(typeof(CmsContext))]
-    partial class CmsContextModelSnapshot : ModelSnapshot
+    [Migration("20151229203039_SubTitle")]
+    partial class SubTitle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348");
