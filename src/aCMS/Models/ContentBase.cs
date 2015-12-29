@@ -42,6 +42,10 @@ namespace aCMS.Models
         [Required]
         public string Title { get; set; }
         /// <summary>
+        /// The subtitle or tagline.
+        /// </summary>
+        public string SubTitle { get; set; }
+        /// <summary>
         /// The content in markdown (or html, since that is valid html too). The content should not incorporate the title, use the <see cref="Title"/> property to specify a title.
         /// </summary>
         [Required]
