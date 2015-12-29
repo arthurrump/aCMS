@@ -15,5 +15,11 @@
     <SchemaVersion>2.0</SchemaVersion>
     <DevelopmentServerPort>51427</DevelopmentServerPort>
   </PropertyGroup>
+  <ItemGroup>
+    <DnxInvisibleContent Include="Themes\CleanBlog\.git" />
+  </ItemGroup>
+  <ItemGroup>
+    <DnxInvisibleFolder Include="Themes\CleanBlog\node_modules\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
