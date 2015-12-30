@@ -40,7 +40,6 @@ namespace aCMS
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
-                .SetBasePath(appEnv.ApplicationBasePath)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
 
