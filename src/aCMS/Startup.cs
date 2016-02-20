@@ -51,8 +51,7 @@ namespace aCMS
         {
             services.AddEntityFramework()
                 .AddSqlite()
-                .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"))
-                .AddDbContext<UserContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/users.db"));
+                .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"));
 
             // Add services to connect to the database for each type of data in the database
             services.AddScoped<IDataService<Blog>, DatabaseDataService<Blog>>();
@@ -60,13 +59,11 @@ namespace aCMS
             services.AddScoped<IDataService<Page>, DatabaseDataService<Page>>();
             services.AddScoped<IDataService<Author>, DatabaseAuthorService>();
 
-            services.AddScoped<IUserService, UserService>();
-
             services.AddMvc()
                 .AddRazorOptions(options =>
-                {
-                    options.FileProvider = new PhysicalFileProvider($"{_appEnv.ApplicationBasePath}/Themes/CleanBlog");
-                });
+                    {
+                        options.FileProvider = new PhysicalFileProvider($"{_appEnv.ApplicationBasePath}/Themes/CleanBlog");
+                    });
 
             services.AddInstance(typeof(IConfiguration), Configuration);
         }
