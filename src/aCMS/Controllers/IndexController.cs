@@ -47,7 +47,10 @@ namespace aCMS.Controllers
                 {
                     data = _blogService.Get("/");
                 }
-                catch { }
+                catch
+                {
+                    return HttpNotFound();
+                }
             }
 
             if (data is Page)
