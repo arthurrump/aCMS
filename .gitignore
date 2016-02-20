@@ -15,6 +15,10 @@
 # Ignore the data directory used for databases and uploaded files
 Data/
 
+# DNX
+project.lock.json
+artifacts/
+
 # Ignore the data added by a theme
 **/wwwroot/Themes/
 
