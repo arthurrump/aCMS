@@ -35,5 +35,6 @@
     "**.user",
     "**.vspscc",
     "Data/"
-  ]
+  ],
+  "userSecretsId": "aspnet5-aCMS.Web-20160228094010"
 }
