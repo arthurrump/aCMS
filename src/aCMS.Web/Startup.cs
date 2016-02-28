@@ -25,7 +25,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Data.Entity;
 using aCMS.Core.Models;
-using aCMS.Web.Services;
+using aCMS.Core.Services;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.AspNet.FileProviders;
 
