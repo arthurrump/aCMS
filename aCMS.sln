@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F351D30A-E201-40BF-AE11-A2D24585E17C}"
 EndProject
@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NuGet.Config = NuGet.Config
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "aCMS", "src\aCMS\aCMS.xproj", "{FF78C8B7-C294-4166-AF6C-EBE1CB95891D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "aCMS.Web", "src\aCMS.Web\aCMS.Web.xproj", "{FF78C8B7-C294-4166-AF6C-EBE1CB95891D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "aCMS.Core", "src\aCMS.Core\aCMS.Core.xproj", "{004CA78D-45B7-467C-B989-881CEFB08797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +25,16 @@ Global
 		{FF78C8B7-C294-4166-AF6C-EBE1CB95891D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF78C8B7-C294-4166-AF6C-EBE1CB95891D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF78C8B7-C294-4166-AF6C-EBE1CB95891D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004CA78D-45B7-467C-B989-881CEFB08797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004CA78D-45B7-467C-B989-881CEFB08797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004CA78D-45B7-467C-B989-881CEFB08797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004CA78D-45B7-467C-B989-881CEFB08797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FF78C8B7-C294-4166-AF6C-EBE1CB95891D} = {F351D30A-E201-40BF-AE11-A2D24585E17C}
+		{004CA78D-45B7-467C-B989-881CEFB08797} = {F351D30A-E201-40BF-AE11-A2D24585E17C}
 	EndGlobalSection
 EndGlobal

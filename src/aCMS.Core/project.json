@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0-*",
+  "description": "aCMS.Core Class Library",
+  "authors": [ "ikjeh" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "CommonMark.NET": "0.11.0",
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "CommonMark.NET": "0.11.0",
+    "EntityFramework.Core": "7.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-rc1-final"
+  }
+}
