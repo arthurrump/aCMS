@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Data.Entity.Migrations;
+using Microsoft.Data.Entity.Metadata;
 
 namespace aCMS.Web.Migrations
 {
-    public partial class Initialdesign : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +14,7 @@ namespace aCMS.Web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Bio = table.Column<string>(nullable: false),
                     BitbucketUsername = table.Column<string>(nullable: true),
                     CodepenUsername = table.Column<string>(nullable: true),
@@ -24,7 +25,8 @@ namespace aCMS.Web.Migrations
                     ImageUrl = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     StackoverflowUsername = table.Column<string>(nullable: true),
-                    TwitterHandle = table.Column<string>(nullable: true)
+                    TwitterHandle = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,13 +37,14 @@ namespace aCMS.Web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AuthorDisplay = table.Column<bool>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
                     Content = table.Column<string>(nullable: false),
                     DateTimeCreated = table.Column<DateTimeOffset>(nullable: false),
                     DateTimeDisplay = table.Column<bool>(nullable: false),
                     DateTimeUpdated = table.Column<DateTimeOffset>(nullable: false),
+                    SubTitle = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: false),
                     Url = table.Column<string>(nullable: false)
                 },
@@ -52,20 +55,22 @@ namespace aCMS.Web.Migrations
                         name: "FK_Blog_Author_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Author",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
             migrationBuilder.CreateTable(
                 name: "Page",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AuthorDisplay = table.Column<bool>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
                     Content = table.Column<string>(nullable: false),
                     DateTimeCreated = table.Column<DateTimeOffset>(nullable: false),
                     DateTimeDisplay = table.Column<bool>(nullable: false),
                     DateTimeUpdated = table.Column<DateTimeOffset>(nullable: false),
+                    SubTitle = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: false),
                     Url = table.Column<string>(nullable: false)
                 },
@@ -76,14 +81,15 @@ namespace aCMS.Web.Migrations
                         name: "FK_Page_Author_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Author",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
             migrationBuilder.CreateTable(
                 name: "Post",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AuthorDisplay = table.Column<bool>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
                     BlogId = table.Column<int>(nullable: false),
@@ -91,6 +97,7 @@ namespace aCMS.Web.Migrations
                     DateTimeCreated = table.Column<DateTimeOffset>(nullable: false),
                     DateTimeDisplay = table.Column<bool>(nullable: false),
                     DateTimeUpdated = table.Column<DateTimeOffset>(nullable: false),
+                    SubTitle = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: false),
                     Url = table.Column<string>(nullable: false)
                 },
@@ -101,12 +108,14 @@ namespace aCMS.Web.Migrations
                         name: "FK_Post_Author_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Author",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Post_Blog_BlogId",
                         column: x => x.BlogId,
                         principalTable: "Blog",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
         }
 

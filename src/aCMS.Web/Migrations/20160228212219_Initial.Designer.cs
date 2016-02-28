@@ -8,13 +8,14 @@ using aCMS.Core.Models;
 namespace aCMS.Web.Migrations
 {
     [DbContext(typeof(CmsContext))]
-    [Migration("20151113210609_Create Authors table")]
-    partial class CreateAuthorstable
+    [Migration("20160228212219_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0-beta8-15964");
+                .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("aCMS.Core.Models.Author", b =>
                 {
@@ -46,6 +47,9 @@ namespace aCMS.Web.Migrations
 
                     b.Property<string>("TwitterHandle");
 
+                    b.Property<string>("Url")
+                        .IsRequired();
+
                     b.HasKey("Id");
                 });
 
@@ -66,6 +70,8 @@ namespace aCMS.Web.Migrations
                     b.Property<bool>("DateTimeDisplay");
 
                     b.Property<DateTimeOffset>("DateTimeUpdated");
+
+                    b.Property<string>("SubTitle");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -93,6 +99,8 @@ namespace aCMS.Web.Migrations
                     b.Property<bool>("DateTimeDisplay");
 
                     b.Property<DateTimeOffset>("DateTimeUpdated");
+
+                    b.Property<string>("SubTitle");
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -122,6 +130,8 @@ namespace aCMS.Web.Migrations
                     b.Property<bool>("DateTimeDisplay");
 
                     b.Property<DateTimeOffset>("DateTimeUpdated");
+
+                    b.Property<string>("SubTitle");
 
                     b.Property<string>("Title")
                         .IsRequired();

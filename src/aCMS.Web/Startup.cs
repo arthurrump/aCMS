@@ -41,6 +41,8 @@ namespace aCMS.Web
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
                 .AddEnvironmentVariables();
+            if (env.IsDevelopment()) builder.AddUserSecrets();
+
             Configuration = builder.Build();
 
             _appEnv = appEnv;
@@ -50,8 +52,8 @@ namespace aCMS.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFramework()
-                .AddSqlite()
-                .AddDbContext<CmsContext>(options => options.UseSqlite($"Data Source={_appEnv.ApplicationBasePath}/Data/data.db"));
+                .AddSqlServer()
+                .AddDbContext<CmsContext>(options => options.UseSqlServer(Configuration["SQLConnectionString"]));
 
             // Add services to connect to the database for each type of data in the database
             services.AddScoped<IDataService<Blog>, DatabaseDataService<Blog>>();
