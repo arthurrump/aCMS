@@ -5,12 +5,13 @@ using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using aCMS.Core.Models;
 
-namespace aCMS.Web.Migrations
+namespace aCMS.Core.Migrations
 {
     [DbContext(typeof(CmsContext))]
-    partial class CmsContextModelSnapshot : ModelSnapshot
+    [Migration("20160311201653_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")

@@ -23,6 +23,7 @@
   "dependencies": {
     "CommonMark.NET": "0.11.0",
     "EntityFramework.Core": "7.0.0-rc1-final",
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
     "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-rc1-final"
   }
 }

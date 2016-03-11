@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Data.Entity.Migrations;
 using Microsoft.Data.Entity.Metadata;
 
-namespace aCMS.Web.Migrations
+namespace aCMS.Core.Migrations
 {
     public partial class Initial : Migration
     {
