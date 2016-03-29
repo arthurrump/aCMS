@@ -17,14 +17,15 @@ namespace aCMS.Core.Services
             _context = context;
         }
 
-        public IEnumerable<T> Get(bool html = true)
+        public IEnumerable<T> Get(int count, int page = 0, bool html = true)
         {
-            foreach (T d in _context.Set<T>().OrderBy(x => x.DateTimeUpdated))
+            IEnumerable<T> data = _context.Set<T>().OrderBy(x => x.DateTimeUpdated);
+            for (int i = 0; i < count && i + page * count < data.Count(); i++)
             {
                 if (html)
-                    d.Content = CommonMark.CommonMarkConverter.Convert(d.Content).Trim();
+                    data.ElementAt(i).Content = CommonMark.CommonMarkConverter.Convert(data.ElementAt(i).Content).Trim();
 
-                yield return d;
+                yield return data.ElementAt(i);
             }
         }
 

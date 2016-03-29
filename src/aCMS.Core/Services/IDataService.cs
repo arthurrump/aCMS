@@ -22,7 +22,7 @@ namespace aCMS.Core.Services
 {
     public interface IDataService<T> where T : IIdentifier
     {
-        IEnumerable<T> Get(bool html = true);
+        IEnumerable<T> Get(int count, int page = 0, bool html = true);
         T Get(int id, bool html = true);
         T Get(string url, bool html = true);
         T Add(T data);

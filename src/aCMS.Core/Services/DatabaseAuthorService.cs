@@ -16,10 +16,11 @@ namespace aCMS.Core.Services
             _context = context;
         }
 
-        public IEnumerable<Author> Get(bool html = true)
+        public IEnumerable<Author> Get(int count, int page = 0, bool html = true)
         {
-            foreach (Author a in _context.Set<Author>().OrderBy(x => x.Name))
-                yield return a;
+            IEnumerable<Author> data = _context.Set<Author>().OrderBy(x => x.Name);
+            for (int i = 0; i < count && i + page * count < data.Count(); i++)
+                yield return data.ElementAt(i);
         }
 
         public Author Get(string url, bool html = true)
